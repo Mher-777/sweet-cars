@@ -1,5 +1,7 @@
-@import 'header';
-@media (min-width: $mobile) {
+@media (min-width: 320px) {
+  .container{
+    padding: 0 10px;
+  }
   .btn{
     box-shadow: 5px 5px 15px rgba(252, 208, 37, 0.25);
     border-radius: 10px;
@@ -10,6 +12,7 @@
     line-height: 19px;
     letter-spacing: 0.075em;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
     &--bg{
       &-yellow{
         background-color: $yellow;
@@ -30,18 +33,64 @@
   .title{
     &--size{
       &-big{
-        font-weight: 900;
-        font-size: 33px;
+        font-size: 28px;
         line-height: 40px;
+        font-weight: 900;
         letter-spacing: 0.075em;
       }
     }
   }
   .header-subtitle{
     font-weight: 500;
-    font-size: 28px;
+    font-size: 20px;
     line-height: 34px;
     letter-spacing: 0.075em;
     display: block;
   }
+  .section{
+    &-title{
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+      letter-spacing: 0.075em;
+      &--color{
+        &-dark{
+          color: $dark;
+        }
+      }
+    }
+  }
 }
+@media (min-width: $mobile) {
+  .section{
+    &-title{
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+  .title{
+    &--size{
+      &-big{
+        font-size: 33px;
+        line-height: 40px;
+      }
+    }
+  }
+  .btn{
+    &--bg{
+      &-yellow{
+        padding: 10px 25px;
+      }
+    }
+  }
+
+  .header-subtitle{
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .container{
+    padding: 0 15px;
+  }
+}
+@import 'header';
+@import 'discount';

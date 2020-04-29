@@ -17,17 +17,7 @@
         display: block;
       }
     }
-    .btn{
-      text-align: center;
-      &--bg{
-        &-yellow{
-          font-size: 24px;
-          line-height: 28px;
-          width: 350px;
-          padding: 14.5px 20px;
-        }
-      }
-    }
+
     &__logo{
       width: 330px;
       margin-left: 25px;
@@ -85,6 +75,13 @@
         br{
           display: none;
         }
+      }
+    }
+  }
+  .btn{
+    &--bg{
+      &-yellow{
+        padding: 14.5px 50px;
       }
     }
   }
