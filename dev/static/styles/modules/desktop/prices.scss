@@ -1,0 +1,13 @@
+@media (min-width: $desktop) {
+  .prices{
+    &__content{
+      margin: 0 auto;
+    }
+    &__body{
+      &-desc{
+        max-width: 613px;
+      }
+    }
+
+  }
+}
