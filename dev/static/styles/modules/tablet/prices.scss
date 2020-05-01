@@ -35,11 +35,12 @@
         width: 100%;
       }
       &-info{
-        top: 260px;
         margin-right: 0;
         left: auto;
         transform: translateX(0);
         right: 0;
+        height: fit-content;
+        bottom: -110px;
       }
       &-desc{
         max-width: 485px;
@@ -50,6 +51,7 @@
     &__content{
       max-width: 810px;
       padding-right: 80px;
+      padding-bottom: 0;
     }
     &__footer{
       &-text{
