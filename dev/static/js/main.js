@@ -1,6 +1,3 @@
-$(function () {
-
-})
 const iconDown = (bottomScrollSection, scrollTopSection) => {
 	const bottomScroll = document.querySelector(bottomScrollSection),
 		elem = document.querySelector(scrollTopSection);
@@ -10,8 +7,6 @@ const iconDown = (bottomScrollSection, scrollTopSection) => {
 		window.scrollBy({top: elemCountHeight, behavior: "smooth"});
 	})
 }
-iconDown('.header__bottom-icon', '.s-discount')
-
 const select = () => {
 	let selectCurrent = document.querySelectorAll('.select__header'),
 		selectItem = document.querySelectorAll('.select__item');
@@ -27,7 +22,6 @@ const select = () => {
 		})
 	});
 };
-select()
 const sliceText = () => {
 	const text = document.querySelector('.basket__title'),
 		desc = document.querySelector('.basket__desc');
@@ -35,7 +29,6 @@ const sliceText = () => {
 		desc.classList.add('basket__desc--is-open')
 	}
 }
-sliceText()
 const tab = function () {
 	let tabNav = document.querySelectorAll('.prices__navigation-item'),
 		tabContent = document.querySelectorAll('.prices__content'),
@@ -60,7 +53,6 @@ const tab = function () {
 		});
 	}
 };
-tab();
 const accordion = (accordionsSection, contentsSection, activeClass) => {
 	const accordions = document.querySelectorAll(accordionsSection),
 		contents = document.querySelectorAll(contentsSection);
@@ -82,9 +74,13 @@ const accordion = (accordionsSection, contentsSection, activeClass) => {
 		item.classList.add('active')
 	}
 	accordions.forEach((item, i) => {
-		item.addEventListener("click", (event) => active(contents[i], i))
+		item.addEventListener("click", () => active(contents[i], i))
 
 	});
 }
 accordion('.question-answer__accordion-btn', '.question-answer__accordion-content', 'question-answer__accordion-btn--active')
+iconDown('.header__bottom-icon', '.s-discount')
+select()
+sliceText()
+tab();
 AOS.init();
