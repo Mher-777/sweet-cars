@@ -96,9 +96,14 @@
     padding: 0 15px;
   }
 }
-@import 'header';
-@import 'discount';
-@import "basket";
-@import "prices";
-@import "banner";
-@import "guarantee";
+
+//.question-answer__accordion-icon{
+//  fill: red;
+//}
+@import 'dev/static/styles/modules/mobile/header';
+@import 'dev/static/styles/modules/mobile/discount';
+@import "dev/static/styles/modules/mobile/basket";
+@import "dev/static/styles/modules/mobile/prices";
+@import "dev/static/styles/modules/mobile/banner";
+@import "dev/static/styles/modules/mobile/guarantee";
+@import "dev/static/styles/modules/mobile/question-answer";

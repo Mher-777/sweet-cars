@@ -30,34 +30,30 @@ const select = () => {
 select()
 const sliceText = () => {
 	const text = document.querySelector('.basket__title'),
-			desc = document.querySelector('.basket__desc');
-	if(text.clientHeight > 350){
+		desc = document.querySelector('.basket__desc');
+	if (text.clientHeight > 350) {
 		desc.classList.add('basket__desc--is-open')
 	}
 }
 sliceText()
 const tab = function () {
-	let tabNav = document.querySelectorAll('.prices__navigation-item'), // Выбираем элементы навигации табов
-		tabContent = document.querySelectorAll('.prices__content'), // Выбираем самы табы
-		tabName; // Переменная для имени таба
-
-	// Проходим циклом по каждому элементу навигации и навешиваем обработчик клика, который вызывает функцию selectTabNav
+	let tabNav = document.querySelectorAll('.prices__navigation-item'),
+		tabContent = document.querySelectorAll('.prices__content'),
+		tabName;
 	tabNav.forEach((item) => {
 		item.addEventListener('click', selectTabNav)
 	});
 
 	function selectTabNav() {
 		tabNav.forEach((item) => {
-			// Удаляем активный класс у всех элементов навигации табов
 			item.classList.remove('is-active');
 		});
-		this.classList.add('is-active');  // Добавляем активный укласс у элемента по которому кликнули
-		tabName = this.getAttribute('data-tab-name'); // Получаем имя таба, который нам нужен
-		selectTabContent(tabName); // Запускаем функцию, чтобы показать выбранный таб
+		this.classList.add('is-active');
+		tabName = this.getAttribute('data-tab-name');
+		selectTabContent(tabName);
 	}
 
 	function selectTabContent(tab) {
-		// Проходим по всем табам и проверяем есть ли у элемента класс, равный имени таба(переменной tabName). Если есть, то добавляем класс активного таба, если нет, то удаляем этот класс
 		tabContent.forEach((item) => {
 			let classList = item.classList;
 			classList.contains(tab) ? classList.add('is-active') : classList.remove('is-active');
@@ -65,4 +61,30 @@ const tab = function () {
 	}
 };
 tab();
+const accordion = (accordionsSection, contentsSection, activeClass) => {
+	const accordions = document.querySelectorAll(accordionsSection),
+		contents = document.querySelectorAll(contentsSection);
+
+	const active = (item, index) => {
+		accordions.forEach((elem, i) => {
+			elem.classList.add(activeClass)
+			if(i !== index){
+				elem.classList.remove(activeClass)
+			}
+		})
+		contents.forEach((content, i) => {
+			if (i !== index) {
+				content.classList.remove('active')
+				content.style.height = '';
+			}
+		})
+		item.style.height = `${item.scrollHeight}px`;
+		item.classList.add('active')
+	}
+	accordions.forEach((item, i) => {
+		item.addEventListener("click", (event) => active(contents[i], i))
+
+	});
+}
+accordion('.question-answer__accordion-btn', '.question-answer__accordion-content', 'question-answer__accordion-btn--active')
 AOS.init();
