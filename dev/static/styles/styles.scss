@@ -19,6 +19,7 @@ body {
   color: $white;
   min-width: 320px;
   letter-spacing: 0.075em;
+
 }
 
 *,
@@ -59,7 +60,11 @@ section { position: relative; }
 
 input,
 select,
-button { outline: none; }
+button,
+video{ outline: none; }
+video{
+  object-fit: cover;
+}
 a{
   color: inherit;
   text-decoration: none;
@@ -70,12 +75,10 @@ button{
   background-color: transparent;
 }
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
+  overflow-x: hidden;
 }
 
 .content { flex: 1 0 auto; }
@@ -85,9 +88,6 @@ button{
   max-width: $content;
   width: 100%;
   padding: 0 15px;
-}
-.s{
-
 }
 //Модули
 @import "modules/modules";

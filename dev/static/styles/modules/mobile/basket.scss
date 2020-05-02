@@ -61,6 +61,7 @@
       }
     }
     &__select{
+      z-index: 2;
       &-header{
         @extend .basket__form-input;
         color: $black;

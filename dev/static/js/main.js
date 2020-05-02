@@ -78,9 +78,20 @@ const accordion = (accordionsSection, contentsSection, activeClass) => {
 
 	});
 }
+const animation = () => {
+	AOS.init({
+		easing: 'ease-in-out',
+		once: true,
+		mirror: true,
+		offset: 100,
+		duration: 700,
+	});
+}
 accordion('.question-answer__accordion-btn', '.question-answer__accordion-content', 'question-answer__accordion-btn--active')
 iconDown('.header__bottom-icon', '.s-discount')
 select()
 sliceText()
 tab();
-AOS.init();
+animation()
+
+
